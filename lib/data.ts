@@ -34,3 +34,34 @@ export const navLinks = [
   },
 ] as const;
 
+// export const skillsCategories = [
+//   "Frontend",
+//   "Backend",
+//   "DevOps",
+// ] as const;
+
+export const skillsData = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Next.js",
+  "Remix.run",
+  "Astro",
+  "Tailwind",
+  "Bootstrap",
+  "Shadcn/ui",
+  "Framer Motion",
+  "GSAP",
+  "Node.js",
+  "Express",
+  "PostgreSQL",
+  "MongoDB",
+  "MySQL",
+  "Linux",
+  "Docker",
+  "Git",
+  "GitHub Actions",
+  "CI/CD",
+] as const;
