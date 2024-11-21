@@ -4,7 +4,6 @@ import { siteMetadata } from '@/lib/data'
 const inter = Inter({ subsets: ['latin'] })
 
 import Header from '@/components/Header'
-import Intro from '@/components/Intro'
 
 export const metadata = {
   title: siteMetadata.title,
