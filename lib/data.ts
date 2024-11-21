@@ -7,15 +7,22 @@ import {
 } from 'react-icons/fa';
 import { LuGraduationCap } from 'react-icons/lu';
 
-// **************************** Content
+// **************************** Metadata
 export const siteMetadata = {
   title: 'Matías | Portfolio Personal',
   description: 'Matías es un desarrollador con 2 años de experiencia en desarrollo frontend',
+}
+
+// **************************** Personal Data
+export const personalData = {
   name: 'Matías',
   fullName: 'Matías Baldanza',
   email: 'matiasbaldanza@gmail.com',
+  linkedin: 'https://www.linkedin.com/in/matiasbaldanza/',
+  github: 'https://github.com/matiasbaldanza',
 }
 
+// **************************** Content
 export const navLinks = [
   {
     name: "Inicio",
