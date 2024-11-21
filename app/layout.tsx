@@ -1,11 +1,12 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
+import { siteMetadata } from '@/lib/data'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Matías | Portfolio Personal',
-  description: 'Matías es un desarrollador con 2 años de experiencia en desarrollo frontend',
+  title: siteMetadata.title,
+  description: siteMetadata.description,
 }
 
 export default function RootLayout({
