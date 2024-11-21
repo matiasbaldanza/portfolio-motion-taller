@@ -19,27 +19,27 @@ export const siteMetadata = {
 export const navLinks = [
   {
     name: "Inicio",
-    hash: "#home",
+    href: "#home",
   },
   {
-    name: "Acerca de",
-    hash: "#about",
+    name: "About",
+    href: "#about",
   },
   {
     name: "Proyectos",
-    hash: "#projects",
+    href: "#projects",
   },
   {
     name: "Habilidades",
-    hash: "#skills",
+    href: "#skills",
   },
   {
     name: "Experiencia",
-    hash: "#experience",
+    href: "#experience",
   },
   {
     name: "Contacto",
-    hash: "#contact",
+    href: "#contact",
   },
 ] as const;
 
