@@ -1,14 +1,15 @@
 import React from 'react'
-import SectionHeading from './SectionHeading'
+import SectionContainer from '@/components/SectionContainer'
 
 export default function About() {
   return (
-    <section
-      className="mb-28 max-w-[45rem] text-center leading-8 sm:mb-40 scroll-mt-28"
+    <SectionContainer
+      heading="Acerca de mí"
+      id="about"
     >
-      <SectionHeading>
-        Acerca de mí
-      </SectionHeading>
-    </section>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+      </p>
+    </SectionContainer>
   )
 }
