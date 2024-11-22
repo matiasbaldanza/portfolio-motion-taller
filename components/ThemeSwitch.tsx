@@ -1,45 +1,13 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { BsMoon, BsSun, BsGear } from 'react-icons/bs'
-
-type Theme = 'light' | 'dark' | 'system'
+import { useTheme, ThemeType } from '@/context/ThemeContext'
 
 export default function ThemeSwitch() {
-  const [theme, setTheme] = useState<Theme>(() => {
-    // Load initial theme from localStorage or default to 'system'
-    return (window.localStorage.getItem('theme') as Theme | null) || 'system'
-  })
+  const { theme, toggleTheme } = useTheme()
 
-  const getSystemPreference = () =>
-    window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-
-  const applyTheme = (currentTheme: Theme) => {
-    document.documentElement.classList.remove('light', 'dark')
-    const savedTheme = currentTheme === 'system' ? getSystemPreference() : currentTheme
-    document.documentElement.classList.add(savedTheme)
-  }
-
-  useEffect(() => {
-    applyTheme(theme)
-
-    if (theme === 'system') {
-      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-      const handleSystemThemeChange = () => applyTheme('system')
-
-      mediaQuery.addEventListener('change', handleSystemThemeChange)
-      return () => mediaQuery.removeEventListener('change', handleSystemThemeChange)
-    }
-  }, [theme])
-
-  const toggleTheme = () => {
-    const newTheme: Theme = theme === 'light' ? 'dark' : theme === 'dark' ? 'system' : 'light'
-    setTheme(newTheme)
-    window.localStorage.setItem('theme', newTheme)
-    applyTheme(newTheme)
-  }
-
-  const themeIcons: Record<Theme, JSX.Element> = {
+  const themeIcons: Record<ThemeType, JSX.Element> = {
     light: <BsSun size={15} />,
     dark: <BsMoon size={15} />,
     system: <BsGear size={15} />,
