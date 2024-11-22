@@ -1,11 +1,13 @@
 import React from 'react';
 
-// **************************** Icons
-import {
-  FaChalkboardTeacher,
-  FaReact,
-} from 'react-icons/fa';
-import { LuGraduationCap } from 'react-icons/lu';
+import { FaChalkboardTeacher, FaReact } from 'react-icons/fa'
+import { LuGraduationCap } from 'react-icons/lu'
+
+import corpcommentImg from "@/public/project-thumb-corpcomment.png";
+import rmtdevImg from "@/public/project-thumb-rmtdev.png";
+import wordanalyticsImg from "@/public/project-thumb-wordanalytics.png";
+
+
 
 // **************************** Metadata
 export const siteMetadata = {
@@ -47,6 +49,30 @@ export const navLinks = [
   {
     name: "Contacto",
     href: "#contact",
+  },
+] as const;
+
+export const projectsData = [
+  {
+    title: "Proyecto 1",
+    description:
+      "Proyecto de startup donde los usuarios pueden dar feedback público a empresas. Implementación full-stack.",
+    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
+    imageUrl: corpcommentImg,
+  },
+  {
+    title: "Proyecto 2",
+    description:
+      "Una bolsa de trabajo remoto para developers. Hice el front-end. Incluye filtros, ordenamiento y paginación.",
+    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
+    imageUrl: rmtdevImg,
+  },
+  {
+    title: "Proyecto 3",
+    description:
+      "Una aplicación web de analíticas sobre contenido de texto. Calcula la cantidad de palabras, caracteres y límites de publicación en redes sociales.",
+    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+    imageUrl: wordanalyticsImg,
   },
 ] as const;
 
