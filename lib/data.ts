@@ -2,6 +2,8 @@ import React from 'react';
 
 import { FaChalkboardTeacher, FaReact } from 'react-icons/fa'
 import { LuGraduationCap } from 'react-icons/lu'
+import { MdOutlineSupport } from "react-icons/md"
+import { BsTranslate } from "react-icons/bs"
 
 import corpcommentImg from "@/public/project-thumb-corpcomment.png";
 import rmtdevImg from "@/public/project-thumb-rmtdev.png";
@@ -78,19 +80,19 @@ export const projectsData = [
 
 export const experiencesData = [
   {
-    title: "Soporte Técnico y Sysadmin",
-    company: "Generación WiFi",
+    title: "Technical Content Creator",
+    company: "DonWeb",
     location: "Argentina",
-    description: "Responsable de servicio técnico y sysadmin (Windows Server y Linux).",
-    date: "2004 - 2017",
-    icon: React.createElement(LuGraduationCap),
+    description: "Creación de contenido técnico y talleres sobre devops, CI/CD, Docker, Linux, Frontend, Backend, etc.",
+    date: "2024 - actualidad",
+    icon: React.createElement(FaChalkboardTeacher),
   },
   {
-    title: "Traductor de Inglés",
+    title: "Desarrollador Frontend Freelance",
     company: "Freelance",
     location: "Argentina",
-    description: "Traducción técnica y legal.",
-    date: "2015 - 2023",
+    description: "Desarrollo de aplicaciones web utilizando React, Next.js y Tailwind CSS.",
+    date: "2022 - 2024",
     icon: React.createElement(FaReact),
   },
   {
@@ -102,20 +104,20 @@ export const experiencesData = [
     icon: React.createElement(LuGraduationCap),
   },
   {
-    title: "Desarrollador Frontend Freelance",
+    title: "Traductor de Inglés",
     company: "Freelance",
     location: "Argentina",
-    description: "Desarrollo de aplicaciones web utilizando React, Next.js y Tailwind CSS.",
-    date: "2022 - 2024",
-    icon: React.createElement(FaReact),
+    description: "Traducción técnica y legal.",
+    date: "2015 - 2023",
+    icon: React.createElement(BsTranslate),
   },
   {
-    title: "Technical Content Creator",
-    company: "DonWeb",
+    title: "Soporte Técnico y Sysadmin",
+    company: "Generación WiFi",
     location: "Argentina",
-    description: "Creación de contenido técnico y talleres sobre devops, CI/CD, Docker, Linux, Frontend, Backend, etc.",
-    date: "2024 - actualidad",
-    icon: React.createElement(FaChalkboardTeacher),
+    description: "Responsable de servicio técnico y sysadmin (Windows Server y Linux).",
+    date: "2004 - 2017",
+    icon: React.createElement(MdOutlineSupport),
   },
 ] as const;
 
