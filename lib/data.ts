@@ -11,12 +11,6 @@ import wordanalyticsImg from "@/public/project-thumb-wordanalytics.png";
 
 
 
-// **************************** Metadata
-export const siteMetadata = {
-  title: 'Matías | Portfolio Personal',
-  description: 'Matías es un desarrollador con 2 años de experiencia en desarrollo frontend',
-}
-
 // **************************** Personal Data
 export const personalData = {
   name: 'Matías',
@@ -24,6 +18,12 @@ export const personalData = {
   email: 'matiasbaldanza@gmail.com',
   linkedin: 'https://www.linkedin.com/in/matiasbaldanza/',
   github: 'https://github.com/matiasbaldanza',
+}
+
+// **************************** Metadata
+export const siteMetadata = {
+  title: `${personalData.fullName} | Front-End Developer`,
+  description: 'Matías es un desarrollador con 2 años de experiencia en desarrollo frontend',
 }
 
 // **************************** Content
