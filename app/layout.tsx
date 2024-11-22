@@ -1,6 +1,7 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { siteMetadata } from '@/lib/data'
+import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ['latin'] })
 
 import Header from '@/components/Header'
@@ -24,6 +25,7 @@ export default function RootLayout({
         <PageBackground />
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )
