@@ -1,13 +1,18 @@
 "use client"
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import Link from "next/link"
 
 import { navLinks } from "@/lib/data"
 import clsx from "clsx";
-import { SectionContainerProps } from "./SectionContainer"
+import { SectionName } from "./SectionContainer"
+import { useActiveSectionContext } from "@/context/ActiveSectionContext"
 
 export default function Header() {
-  const [activeSection, setActiveSection] = useState<SectionContainerProps["id"]>("home")
+  const {
+    activeSection,
+    setActiveSection,
+    setTimeOfLastClick
+  } = useActiveSectionContext()
   return (
     <header className="z-[999] relative">
       <div
@@ -34,12 +39,13 @@ export default function Header() {
                   "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-400 dark:hover:text-gray-100",
                   {
                     "text-gray-950 dark:text-gray-200":
-                      activeSection === link.href.slice(1) as SectionContainerProps["id"],
+                      activeSection === link.href.slice(1) as SectionName,
                   }
                 )}
                 href={link.href}
                 onClick={() => {
-                  setActiveSection(link.href.slice(1) as SectionContainerProps["id"])
+                  setActiveSection(link.href.slice(1) as SectionName)
+                  setTimeOfLastClick(Date.now())
                 }}
               >
                 {link.name}

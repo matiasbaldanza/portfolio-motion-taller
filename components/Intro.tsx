@@ -1,20 +1,27 @@
+"use client"
+
 import React from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { useSectionInView } from "@/hooks/hooks"
 
 // Icons
 import { FaLinkedin, FaGithubSquare } from "react-icons/fa"
 import { BsArrowRight } from "react-icons/bs"
 import { HiDownload } from "react-icons/hi"
+
 // Data
 import { personalData } from "@/lib/data"
+import { SectionName } from "./SectionContainer"
 
 export default function Intro() {
   const { name, linkedin, github } = personalData;
+  const { ref } = useSectionInView("home" as SectionName)
 
   return (
     <section
       id="home"
+      ref={ref}
       className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
     >
       <div className="flex items-center justify-center">
