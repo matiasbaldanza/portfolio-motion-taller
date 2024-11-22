@@ -1,10 +1,11 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { siteMetadata } from '@/lib/data'
-import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ['latin'] })
 
 import Header from '@/components/Header'
+import Footer from "@/components/Footer";
+import ThemeSwitch from '@/components/ThemeSwitch'
 import PageBackground from '@/components/PageBackground'
 export const metadata = {
   title: siteMetadata.title,
@@ -26,6 +27,8 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+
+        <ThemeSwitch />
       </body>
     </html>
   )
