@@ -27,7 +27,7 @@ export default function Header() {
             <li key={link.href} className="relative flex items-center justify-center h-3/4">
               <Link
                 className={clsx(
-                  "flex w-full items-center justify-center py-3 px-3 sm:px-0 hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-300",
+                  "flex w-full items-center justify-center py-3 px-3 sm:px-0 hover:text-gray-950 transition dark:text-gray-400 dark:hover:text-gray-100",
                 )}
                 href={link.href}
               >
