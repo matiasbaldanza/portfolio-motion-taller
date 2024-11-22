@@ -21,6 +21,12 @@ Las animaciones están implementadas en una rama llamada `animations-finished`.
 - React Icons
 - Framer Motion
 
+## NOTA
+
+- La funcionalidad instalada (sitio sin animar) está implementada en la rama 'main'.
+- Las animaciones están implementadas en la rama 'animations-finished'.
+- Las animaciones hechas en el taller están implementadas en la rama 'animations-workshop'
+
 ## Instalación
 
 Clonar el repositorio y luego instalar dependencias:
