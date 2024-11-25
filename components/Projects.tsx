@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import SectionContainer from '@/components/SectionContainer'
 import { projectsData } from '@/lib/data'
 import ProjectCard from './ProjectCard'

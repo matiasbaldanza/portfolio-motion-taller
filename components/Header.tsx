@@ -1,4 +1,5 @@
 "use client"
+
 import React, { useState, useContext } from "react"
 import Link from "next/link"
 
@@ -6,6 +7,7 @@ import { navLinks } from "@/lib/data"
 import clsx from "clsx";
 import { SectionName } from "./SectionContainer"
 import { useActiveSectionContext } from "@/context/ActiveSectionContext"
+// import { motion } from "framer-motion"
 
 export default function Header() {
   const {
@@ -14,7 +16,13 @@ export default function Header() {
     setTimeOfLastClick
   } = useActiveSectionContext()
   return (
-    <header className="z-[999] relative">
+    <header className="z-[999] relative"
+    // initial={{ y: -50, opacity: 0 }}
+    // animate={{ y: 0, opacity: 1 }}
+    // transition={{
+    //   duration: 0.4,
+    // }}
+    >
       <div
         className={`fixed top-0 left-1/2 -translate-x-1/2 w-full h-[4.5rem] 
           border border-white border-opacity-40 
