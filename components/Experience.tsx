@@ -22,7 +22,7 @@ export default function Experience() {
       className="flex flex-col px-4 sm:px-10 gap-4 [&>*]:text-balance [&>*]:leading-8 md:max-w-5xl"
     >
       {/* VerticalTimeline can be animated with the prop animate={true} */}
-      <VerticalTimeline lineColor="" animate={false}>
+      <VerticalTimeline lineColor="" /* animate={false} */>
         {Object.values(experiencesData)
           // TODO: Add a selector to reverse sort by date
           // TODO: Add a filter to select work by skills/technologies
