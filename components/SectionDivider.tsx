@@ -1,9 +1,18 @@
-import React from "react";
+"use client"
+
+import React from "react"
+import { motion } from "framer-motion"
+
+import { verticalJumpVariants } from "@/lib/animations"
 
 export default function SectionDivider() {
   return (
-    <div
+    <motion.div
       className="hidden w-1 h-16 my-24 bg-gray-200 rounded-full sm:block dark:bg-opacity-20"
-    ></div>
+      variants={verticalJumpVariants}
+      initial="initial"
+      animate="final"
+      transition={{ delay: 0.3 }}
+    ></motion.div>
   );
 }

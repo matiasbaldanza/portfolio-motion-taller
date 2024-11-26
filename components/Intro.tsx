@@ -4,6 +4,8 @@ import React from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { useSectionInView } from "@/hooks/hooks"
+import { motion } from "framer-motion"
+import { verticalJumpVariants } from "@/lib/animations"
 
 // Icons
 import { FaLinkedin, FaGithubSquare } from "react-icons/fa"
@@ -13,6 +15,8 @@ import { HiDownload } from "react-icons/hi"
 // Data
 import { personalData } from "@/lib/data"
 import { SectionName } from "./SectionContainer"
+
+
 
 export default function Intro() {
   const { name, linkedin, github } = personalData;
@@ -27,32 +31,63 @@ export default function Intro() {
       <div className="flex items-center justify-center">
         {/* Profile image */}
         <div className="relative">
-          <Image
-            src="/matias-baldanza-profile-image.png"
-            alt="Foto de perfil de Matías Baldanza"
-            width="192"
-            height="192"
-            quality="95"
-            priority={true}
-            className="h-24 w-24 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
-          />
-          <span className="absolute bottom-0 left-0 text-4xl">
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              type: "tween",
+            }}
+          >
+            <Image
+              src="/matias-baldanza-profile-image.png"
+              alt="Foto de perfil de Matías Baldanza"
+              width="192"
+              height="192"
+              quality="95"
+              priority={true}
+              className="h-24 w-24 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
+            />
+          </motion.div>
+          <motion.span className="absolute bottom-0 left-0 text-4xl"
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 0.1,
+              duration: 0.6,
+            }}
+          >
             👋
-          </span>
+          </motion.span>
         </div>
 
       </div>
 
       {/* Greeting */}
-      <h1 className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl text-balance">
+      <motion.h1
+        className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl text-balance"
+        variants={verticalJumpVariants}
+        initial="initial"
+        animate="final"
+        transition={{
+          delay: 0.1,
+        }}
+      >
         <span className="font-bold">¡Hola! Soy {name}.</span> <br /> Soy un {" "}
         <span className="font-bold">front-end developer</span> con{" "}
         <span className="font-bold">2 años</span> de experiencia.  Trabajo con {" "}
         <span className="underline">React (Next.js) y Astro</span> para crear <span className="italic">sitios y aplicaciones web</span>.
-      </h1>
+      </motion.h1>
 
       {/* Employment links */}
-      <div className="flex flex-col items-center justify-center gap-4 sm:gap-2 text-sm text-gray-800 sm:flex-row [&>*]:w-fit">
+      <motion.div
+        className="flex flex-col items-center justify-center gap-4 sm:gap-2 text-sm text-gray-800 sm:flex-row [&>*]:w-fit"
+        variants={verticalJumpVariants}
+        initial="initial"
+        animate="final"
+        transition={{
+          delay: 0.2,
+        }}
+      >
         <Link href="#"
           className="flex items-center gap-2 py-3 text-white transition bg-gray-900 rounded-full outline-none group px-7 focus:scale-105 hover:scale-105 hover:bg-gray-950 active:scale-95"
         >
@@ -78,6 +113,6 @@ export default function Intro() {
             className="bg-white p-3 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/90"
           ><FaGithubSquare size="1.8em" className="text-[#6e5494]" /></Link>
         </div>
-      </div>
+      </motion.div>
     </section >)
 }
