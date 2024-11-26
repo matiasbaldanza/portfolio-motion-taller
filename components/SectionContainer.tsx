@@ -5,6 +5,9 @@ import SectionHeading from '@/components/SectionHeading'
 import { navLinks } from '@/lib/data'
 import clsx from 'clsx'
 import { useSectionInView } from '@/hooks/hooks'
+import { motion } from 'framer-motion'
+
+import { verticalJumpVariants } from '@/lib/animations'
 
 export type SectionName = (typeof navLinks)[number]['href']
 
@@ -29,7 +32,14 @@ export default function SectionContainer({
   const { ref } = useSectionInView(id as SectionName)
 
   return (
-    <section
+    <motion.section
+      variants={verticalJumpVariants}
+      initial="initial"
+      whileInView="final"
+      viewport={{
+        once: true,
+        margin: "50px"
+      }}
       id={id}
       ref={ref}
       className={clsx(
@@ -41,6 +51,6 @@ export default function SectionContainer({
         {heading}
       </SectionHeading>
       {children}
-    </section>
+    </motion.section>
   )
 }
