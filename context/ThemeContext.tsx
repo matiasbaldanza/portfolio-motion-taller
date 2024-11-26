@@ -23,10 +23,15 @@ type ThemeContextProviderProps = {
 export default function ThemeContextProvider({
   children
 }: ThemeContextProviderProps) {
-  const [theme, setTheme] = useState<ThemeType>(() => {
+  const [theme, setTheme] = useState<ThemeType>('system')
+
+  useEffect(() => {
     // Load initial theme from localStorage or default to 'system'
-    return (window.localStorage.getItem('theme') as ThemeType | null) || 'system'
-  })
+    // wrapped in useEffect to ensure it runs in the client and 
+    // avoid hydration errors
+    const storedTheme = window.localStorage.getItem('theme') as ThemeType | null
+    setTheme(storedTheme || 'system')
+  }, [])
 
   const getSystemPreference = () =>
     window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'

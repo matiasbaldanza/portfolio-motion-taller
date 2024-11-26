@@ -1,6 +1,8 @@
 # Portfolio personal usando Motion
 
-Portfolio personal implementado con Next.js (App Router) sin animaciones, recreado a partir de un diseño hecho en un tutorial de [@ByteGrand](https://youtube.com/@ByteGrand).
+Portfolio personal implementado con Next.js (App Router) sin animaciones, recreado a partir de un diseño hecho en un tutorial de [@ByteGrad](https://youtube.com/@ByteGrad).
+
+Tutorial original: [https://youtu.be/sUKptmUVIBM?si=aHloUppvrL-v9uSN](https://youtu.be/sUKptmUVIBM?si=aHloUppvrL-v9uSN)
 
 El tutorial fue recreado desde cero a partir del resultado final del tutorial original (algunas cosas están implementadas de forma distinta) y se extendió agregando un theme switcher de tres estados.
 
