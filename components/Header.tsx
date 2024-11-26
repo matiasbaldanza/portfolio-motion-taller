@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useContext } from "react"
 import Link from "next/link"
+import { motion } from "framer-motion"
 
 import { navLinks } from "@/lib/data"
 import clsx from "clsx";
@@ -15,7 +16,7 @@ export default function Header() {
   } = useActiveSectionContext()
   return (
     <header className="z-[999] relative">
-      <div
+      <motion.div
         className={`fixed top-0 left-1/2 -translate-x-1/2 w-full h-[4.5rem] 
           border border-white border-opacity-40 
           bg-white bg-opacity-80 rounded-none 
@@ -24,15 +25,20 @@ export default function Header() {
           sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full 
           dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75
           `}
+        initial={{ x: "-50%", y: -100, opacity: 0 }}
+        animate={{ x: "-50%", y: 0, opacity: 1 }}
       >
 
-      </div>
+      </motion.div>
       <nav className="flex fixed top-[0.15rem] left-1/2 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0">
         <ul className="flex w-[22rem] flex-wrap flex-wrap-balance items-center justify-center gap-y-1 gap-x-2 text-[0.9rem] font-medium text-gray-500 sm:w-[initial] sm:flex-nowrap">
           {navLinks.map((link) => (
-            <li
+            <motion.li
               key={link.href}
               className="relative flex items-center justify-center h-3/4"
+              initial={{ y: -100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.1 }}
             >
               <Link
                 className={clsx(
@@ -51,12 +57,18 @@ export default function Header() {
                 {link.name}
 
                 {link.href === `#${activeSection}` && (
-                  <span
+                  <motion.span
                     className="absolute inset-0 bg-gray-200 rounded-full -z-10 dark:bg-gray-900"
+                    layoutId="activeSection"
+                    transition={{
+                      type: "spring",
+                      stiffness: 380,
+                      damping: 30
+                    }}
                   />
                 )}
               </Link>
-            </li>
+            </motion.li>
           ))}
         </ul>
       </nav>
